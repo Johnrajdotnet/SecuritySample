@@ -1,0 +1,9 @@
+﻿@model SecuritySample.Models.LoginDetails
+@{
+    ViewBag.Title = "HomePage";
+}
+
+<h2>Welcome HomePage by @Model.UserName</h2>
+@Html.CustomAntiForgeryToken()
+
+@Html.ActionLink("Login", "Index", "Home")

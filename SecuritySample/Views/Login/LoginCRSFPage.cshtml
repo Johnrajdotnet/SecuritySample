@@ -1,0 +1,80 @@
+﻿@model SecuritySample.Models.LoginDetails
+@{
+    ViewBag.Title = "LoginCRSFPage";
+}
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/modernizr")
+
+<script src="~/Scripts/Custom/GenericAjaxHandler.js"></script>
+<h2>LoginCRSFPage</h2>
+
+<div class="row">
+    <div class="col-md-3">
+
+        @*@using (Html.BeginForm("Home", "CSRFLogin"))
+        {
+            <input type="button" value="Log In" id="btnlogon" class="btn btn-info btn-md cis-theme-d3 cis-hover-theme" />
+            <input name="__RequestVerificationToken" type="hidden" value="@Html.GetAntiXsrfToken()" />
+        }*@
+
+        @using (Html.BeginForm())
+            {
+            @Html.ValidationSummary(false)
+            <fieldset class="scheduler-border">
+                <legend class="scheduler-border">Login</legend>
+                <div class="editor-label">
+                    @Html.LabelFor(u => u.UserName)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(u => u.UserName, new { @class = "allowNumericOnly" })
+                    @Html.ValidationMessageFor(u => u.UserName)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(u => u.Password)
+                </div>
+                <div class="editor-field">
+                    @Html.PasswordFor(u => u.Password)
+                    @Html.ValidationMessageFor(u => u.Password)
+                </div>
+                <input type="button" value="Log In" id="btnlogon" class="btn btn-info btn-md cis-theme-d3 cis-hover-theme" />
+                <div class="editor-field">
+                    @Html.ActionLink("New User? |", "NewUserRegistration", "Account")
+                    @Html.ActionLink("Forgot Password?", "", null, new { @class = "forgotpassword" })
+                </div>
+                @Html.CustomAntiForgeryToken()
+            </fieldset>
+
+        }
+    </div>
+</div>
+
+<script type="text/javascript">
+    baseUrl = '@Url.Content("~/")';
+    flag = "home";
+    //========================== document ready method
+    $(document).ready(function () {
+        onclickEventLoadForLogon();
+    });
+
+    function FillLogonObject() {
+        var inputlogon = {
+            UserName: parseInt($('#@Html.IdFor(m => m.UserName)').val()),
+            Password: $('#@Html.IdFor(m => m.Password)').val(),
+        }
+        inputlogon = { UserName: "fsf", Password :"fasfsa"};
+        return inputlogon;
+    }
+    onclickEventLoadForLogon = function () {
+        $("#btnlogon").click(function (e) {
+                      
+            var logonModel = FillLogonObject(); debugger;
+            if (true) {
+                var linkUrl = baseUrl + 'Home/CSRFLogin';
+                JQAjax('POST', linkUrl, logonModel, "account", flag, "");
+            }
+
+        });
+    }
+
+</script>
