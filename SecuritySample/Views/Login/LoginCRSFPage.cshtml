@@ -13,10 +13,10 @@
     <div class="col-md-3">
 
         @*@using (Html.BeginForm("Home", "CSRFLogin"))
-        {
-            <input type="button" value="Log In" id="btnlogon" class="btn btn-info btn-md cis-theme-d3 cis-hover-theme" />
-            <input name="__RequestVerificationToken" type="hidden" value="@Html.GetAntiXsrfToken()" />
-        }*@
+            {
+                <input type="button" value="Log In" id="btnlogon" class="btn btn-info btn-md cis-theme-d3 cis-hover-theme" />
+                <input name="__RequestVerificationToken" type="hidden" value="@Html.GetAntiXsrfToken()" />
+            }*@
 
         @using (Html.BeginForm())
             {
@@ -62,12 +62,12 @@
             UserName: parseInt($('#@Html.IdFor(m => m.UserName)').val()),
             Password: $('#@Html.IdFor(m => m.Password)').val(),
         }
-        inputlogon = { UserName: "fsf", Password :"fasfsa"};
+        inputlogon = { UserName: "fsf", Password: "fasfsa" };
         return inputlogon;
     }
     onclickEventLoadForLogon = function () {
         $("#btnlogon").click(function (e) {
-                      
+
             var logonModel = FillLogonObject(); debugger;
             if (true) {
                 var linkUrl = baseUrl + 'Home/CSRFLogin';

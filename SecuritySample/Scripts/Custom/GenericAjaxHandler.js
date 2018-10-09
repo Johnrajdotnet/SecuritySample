@@ -44,7 +44,7 @@ JQAjaxStringifyInput = function (httpType, linkUrl, postdata, onSucessFlag, data
 }
 
 onSucessEvent = function (data, onSucessFlag, dataflag, redirectToUrl) {
-    alert(onSucessFlag);
+    //alert(data);
     switch (onSucessFlag) {
         case 'account': $(".container.body-content").html(data); break;
     }

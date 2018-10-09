@@ -3,7 +3,7 @@
     ViewBag.Title = "HomePage";
 }
 
-<h2>Welcome HomePage by @Model.UserName</h2>
-@Html.CustomAntiForgeryToken()
+<h2>Welcome HomePage by @ViewBag.Message </h2>
+@*@Html.CustomAntiForgeryToken()*@
 
 @Html.ActionLink("Login", "Index", "Home")

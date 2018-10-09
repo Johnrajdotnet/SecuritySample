@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using WebApplication2.Infra;
 
 namespace SecuritySample.Controllers
@@ -23,9 +24,12 @@ namespace SecuritySample.Controllers
             return View("~/Views/Login/LoginCRSFPage.cshtml", logon);
         }
         [HttpPost]
+        [ValidateInput(true)]
         public ActionResult CSRFLogin(LoginDetails Login)
         {
             var Loginn = Login;
+            Random random = new Random();
+            //var seed = FormsAuthentication.HashPasswordForStoringInConfigFile(Convert.ToString(random.Next()), "MD5");
             return RedirectToAction("About", "Home");
             //return View("~/Views/Home/LoginPage.cshtml", Login);
         }
