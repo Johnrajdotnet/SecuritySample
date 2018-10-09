@@ -86,7 +86,56 @@ namespace SecuritySample.Attribute
             }
             return isAccessAction;
         }
+        #region referenc code
+        //public override void OnAuthorization(AuthorizationContext filterContext)
+        //{
+        //    bool skipAuthorization = filterContext.ActionDescriptor.IsDefined(typeof(AllowAnonymousAttribute), true) ||
+        //                             filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(typeof(AllowAnonymousAttribute), true);
 
+        //    filterContext.HttpContext.Items["ActionDescriptor"] = filterContext.ActionDescriptor;
+
+        //    // If the method did not exclusively opt-out of security (via the AllowAnonmousAttribute), then check for an authentication ticket.
+        //    if (!skipAuthorization)
+        //    {
+        //        // CheckAuthorize(filterContext);
+        //        base.OnAuthorization(filterContext);
+        //    }
+        //}
+        //protected override bool AuthorizeCore(HttpContextBase httpContext)
+        //{
+        //    var actionDescriptor = httpContext.Items["ActionDescriptor"] as ActionDescriptor;
+        //    var routeDataSet = httpContext.Request.RequestContext.RouteData;
+        //    if (routeDataSet != null)//AccountManager.User != null
+        //    {
+
+        //        string controller = routeDataSet.Values["controller"] != null ? routeDataSet.Values["controller"].ToString() : string.Empty;
+        //        string action = routeDataSet.Values["action"] != null ? routeDataSet.Values["action"].ToString() : string.Empty;
+        //        IsAuthorized(controller, action);
+
+        //    }
+
+        //    return isAuthorized;
+        //}
+        //protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
+        //{
+        //    if (!isAuthorized)
+        //    {
+        //        if (filterContext.HttpContext.Request.IsAjaxRequest())
+        //        {
+        //            filterContext.HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+        //            filterContext.HttpContext.Response.StatusDescription = "Action must authenticate";
+        //            filterContext.HttpContext.Response.SuppressFormsAuthenticationRedirect = true;
+        //            filterContext.HttpContext.Response.End();
+        //        }
+        //        else
+        //        {
+        //            // check if a new session id was generated 
+        //            filterContext.Result = new RedirectResult("~/Account/Login");
+        //        }
+        //    }
+        //    base.HandleUnauthorizedRequest(filterContext);
+        //}
+        #endregion
         private class RedirectController : Controller
         {
             public ActionResult RedirectWhereever()
