@@ -18,7 +18,8 @@ JQAjax = function (httpType, linkUrl, postdata, onSucessFlag, dataflag, redirect
            // stopProgress();
         },
         error: function (req, status, error) {
-            if (req != null && req.status != 401) { alert("Error occured on ajax call : " + req.status + " : " + req.statusText); stopProgress(); }
+            onErrorHandler(req, status, error);
+            //if (req != null && req.status != 401) { alert("Error occured on ajax call : " + req.status + " : " + req.statusText); stopProgress(); }
         }
     });
 }
@@ -57,6 +58,17 @@ startProgress = function () {
 stopProgress = function () {
     //$("#divLoading").removeClass('show');
     //$("#divLoading").addClass('hide');
+}
+
+onErrorHandler = function (req, status, error) {
+    debugger;
+    if (req.status === 401) {
+        window.location.href = baseUrl + 'Account/Login';
+    }
+    if (req != null && req.status != 401) {
+        alert("Error occured on ajax call : " + req.status + " : " + req.statusText);
+    }
+    stopProgress();
 }
 
 cisAppSession = (function () {
