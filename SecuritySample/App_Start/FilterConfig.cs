@@ -11,7 +11,7 @@ namespace SecuritySample
         {
             filters.Add(new CustomErrorHandlerAttribute());
             filters.Add(new AntiforgeryTokenAttribute());
-            filters.Add(new CustomAuthorizeAttribute()); 
+            filters.Add(new CustomAuthorizeAttribute(true, "~/Account/Login")); 
             //filters.Add(new GlobalAntiForgeryTokenAttribute());
         }
     }

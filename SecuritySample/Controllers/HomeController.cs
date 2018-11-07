@@ -43,7 +43,7 @@ namespace SecuritySample.Controllers
             else
             {
                 ModelState.AddModelError("CustomError", "The user name or password provided is incorrect.");
-                return View("~/Views/Account/LoginPage.cshtml");
+                return View("~/Views/Login/LoginCRSFPage.cshtml");
             }
         }
         private bool ValidateUser(LoginDetails logon, HttpResponseBase response)

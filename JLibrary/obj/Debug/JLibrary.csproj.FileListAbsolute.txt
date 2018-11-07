@@ -1,0 +1,17 @@
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\JLibrary.dll
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\JLibrary.pdb
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\System.Web.Helpers.dll
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\System.Web.Mvc.dll
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\System.Web.Razor.dll
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\System.Web.WebPages.dll
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\System.Web.WebPages.Razor.dll
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\System.Web.Helpers.xml
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\System.Web.Mvc.xml
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\System.Web.Razor.xml
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\System.Web.WebPages.xml
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\System.Web.WebPages.Razor.xml
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\obj\Debug\JLibrary.dll
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\obj\Debug\JLibrary.pdb
