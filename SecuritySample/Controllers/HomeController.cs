@@ -61,7 +61,8 @@ namespace SecuritySample.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
+            int i =0;
+            int j = 5 / i;
             return View();
         }
     }

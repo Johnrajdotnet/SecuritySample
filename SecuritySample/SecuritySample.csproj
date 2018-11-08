@@ -195,9 +195,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\JLibrary\JLibrary.csproj">
+    <ProjectReference Include="..\JLibrary\JAuthorizeLibrary.csproj">
       <Project>{930d8082-bc94-48c4-8192-b6177a3e6ec4}</Project>
-      <Name>JLibrary</Name>
+      <Name>JAuthorizeLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
