@@ -7,7 +7,7 @@ namespace SecuritySample.Attribute
        
         public QCustomAuthorizeAttribute(bool isUser,string reDirectUrl):base(isUser, reDirectUrl)
         {
-
+            isUser = false;
         }
 
         protected override bool IsAuthorized(string controller, string action)
@@ -33,7 +33,7 @@ namespace SecuritySample.Attribute
                 case "CSRFLogin":
                     { isAccessAction = true; break; }
                 case "About":
-                    { isAccessAction = false; break; }
+                    { isAccessAction = true; break; }
 
             }
             return isAccessAction;

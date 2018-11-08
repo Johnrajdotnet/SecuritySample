@@ -24,7 +24,7 @@ namespace SecuritySample.Controllers
             return View("~/Views/Login/LoginCRSFPage.cshtml", logon);
         }
         [HttpPost]
-        [ValidateInput(true)]
+        //[ValidateInput(true)]
         public ActionResult CSRFLogin(LoginDetails Login)
         {
             var Loginn = Login;
