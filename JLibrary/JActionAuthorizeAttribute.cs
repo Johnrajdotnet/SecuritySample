@@ -4,12 +4,12 @@ using System.Web.Mvc;
 
 namespace JCustom.Attribute
 {
-    public class JCustomAuthorizeAttribute : AuthorizeAttribute
+    public class JActionAuthorizeAttribute : AuthorizeAttribute
     {
         private bool isAuthorized = false;
         private bool isUserValid = false;
         private string loginUrl = string.Empty;
-        protected JCustomAuthorizeAttribute(bool _isUserValid, string _redirectUrl)
+        protected JActionAuthorizeAttribute(bool _isUserValid, string _redirectUrl)
         {
             isUserValid = _isUserValid;
             loginUrl = _redirectUrl;

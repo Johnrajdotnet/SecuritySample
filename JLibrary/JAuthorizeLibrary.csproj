@@ -70,8 +70,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="JAntiForgeryTokenAttribute.cs" />
-    <Compile Include="JCustomAuthorizeAttribute.cs" />
-    <Compile Include="JCustomErrorHandlerAttribute.cs" />
+    <Compile Include="JActionAuthorizeAttribute.cs" />
+    <Compile Include="JErrorHandlerAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

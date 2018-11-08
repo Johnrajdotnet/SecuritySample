@@ -10,9 +10,9 @@ namespace SecuritySample
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new JCustomErrorHandlerAttribute());
+            filters.Add(new JErrorHandlerAttribute());
             filters.Add(new JAntiforgeryTokenAttribute());
-            filters.Add(new QCustomAuthorizeAttribute(true, "~/Home/Index")); 
+            filters.Add(new QActionAuthorizeAttribute(true, "~/Home/Index")); 
             //filters.Add(new GlobalAntiForgeryTokenAttribute());
         }
     }

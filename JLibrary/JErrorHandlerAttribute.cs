@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace SecuritySample.Attribute
 {
-    public class JCustomErrorHandlerAttribute : HandleErrorAttribute
+    public class JErrorHandlerAttribute : HandleErrorAttribute
     {
         public override void OnException(ExceptionContext filterContext)
         {

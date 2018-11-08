@@ -54,15 +54,15 @@ namespace SecuritySample.Controllers
         public ActionResult About(LoginDetails Loginn)
         {
             ViewBag.Message = "Your application description page.";
-
+            int i = 0;
+            int j = 5 / i;
             return View("~/Views/Home/About.cshtml");
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-            int i =0;
-            int j = 5 / i;
+ 
             return View();
         }
     }

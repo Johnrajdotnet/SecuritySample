@@ -2,10 +2,10 @@
 
 namespace SecuritySample.Attribute
 {
-    public class QCustomAuthorizeAttribute : JCustomAuthorizeAttribute
+    public class QActionAuthorizeAttribute : JActionAuthorizeAttribute
     {
        
-        public QCustomAuthorizeAttribute(bool isUser,string reDirectUrl):base(isUser, reDirectUrl)
+        public QActionAuthorizeAttribute(bool isUser,string reDirectUrl):base(isUser, reDirectUrl)
         {
             isUser = false;
         }
