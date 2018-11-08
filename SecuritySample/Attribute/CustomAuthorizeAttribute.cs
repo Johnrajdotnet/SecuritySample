@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using SecuritySample.Infra;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -9,7 +10,8 @@ namespace SecuritySample.Attribute
         private bool isAuthorized = false;
         private bool isUserValid = false;
         private string loginUrl = string.Empty;
-        public CustomAuthorizeAttribute(bool _isUserValid, string _redirectUrl)
+        private CustomActionRequest customActionRequest = new CustomActionRequest();
+        protected CustomAuthorizeAttribute(bool _isUserValid, string _redirectUrl)
         {
             isUserValid = _isUserValid;
             loginUrl = _redirectUrl;
@@ -22,7 +24,7 @@ namespace SecuritySample.Attribute
 
                 string controller = routeDataSet.Values["controller"] != null ? routeDataSet.Values["controller"].ToString() : string.Empty;
                 string action = routeDataSet.Values["action"] != null ? routeDataSet.Values["action"].ToString() : string.Empty;
-                IsAuthorized(controller, action);
+                isAuthorized=customActionRequest.IsAuthorized(controller, action);
 
             }
 
@@ -127,14 +129,6 @@ namespace SecuritySample.Attribute
         //    base.HandleUnauthorizedRequest(filterContext);
         //}
         #endregion
-        private class RedirectController : Controller
-        {
-            public ActionResult RedirectWhereever()
-            {
-                return RedirectToAction("Contact", "Home");
-            }
-
-        }
 
     }
 

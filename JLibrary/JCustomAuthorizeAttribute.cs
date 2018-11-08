@@ -2,14 +2,14 @@
 using System.Web;
 using System.Web.Mvc;
 
-namespace SecuritySample.Attribute
+namespace JCustom.Attribute
 {
     public class JCustomAuthorizeAttribute : AuthorizeAttribute
     {
         private bool isAuthorized = false;
         private bool isUserValid = false;
         private string loginUrl = string.Empty;
-        public JCustomAuthorizeAttribute(bool _isUserValid, string _redirectUrl)
+        protected JCustomAuthorizeAttribute(bool _isUserValid, string _redirectUrl)
         {
             isUserValid = _isUserValid;
             loginUrl = _redirectUrl;
@@ -22,7 +22,7 @@ namespace SecuritySample.Attribute
 
                 string controller = routeDataSet.Values["controller"] != null ? routeDataSet.Values["controller"].ToString() : string.Empty;
                 string action = routeDataSet.Values["action"] != null ? routeDataSet.Values["action"].ToString() : string.Empty;
-                IsAuthorized(controller, action);
+                isAuthorized= IsAuthorized(controller, action);
 
             }
 
@@ -46,37 +46,20 @@ namespace SecuritySample.Attribute
                 else
                 {
                     // check if a new session id was generated 
-                    filterContext.Result = new RedirectResult(loginUrl);
+                    filterContext.Result = new RedirectResult("~/Home/Index");
                 }
             }
             base.HandleUnauthorizedRequest(filterContext);
         }
 
-        public void IsAuthorized(string controller, string action)
+        protected virtual bool IsAuthorized(string controller, string action) {
+            return IsUserAuthorizedHome(action);
+        }
+        protected virtual bool IsUserAuthorizedHome(string action)
         {
-            switch (controller)
-            {
-
-                case "Home": { isAuthorized = IsUserAuthorizedHome(action); break; }
-            }
+            return false;
         }
 
-        public bool IsUserAuthorizedHome(string action)
-        {
-            bool isAccessAction = false;
-            switch (action)
-            {
-
-                case "DefaultHome": { isAccessAction = true; break; }
-                case "Index":
-                case "CSRFLogin":
-                    { isAccessAction = true; break; }
-                case "About":
-                    { isAccessAction = false; break; }
-
-            }
-            return isAccessAction;
-        }
     }
 
 }

@@ -1,4 +1,5 @@
-﻿using SecuritySample.Attribute;
+﻿using JCustom.Attribute;
+using SecuritySample.Attribute;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication2.Infra;
@@ -11,7 +12,7 @@ namespace SecuritySample
         {
             filters.Add(new CustomErrorHandlerAttribute());
             filters.Add(new AntiforgeryTokenAttribute());
-            filters.Add(new CustomAuthorizeAttribute(true, "~/Account/Login")); 
+            filters.Add(new QCustomAuthorizeAttribute(true, "~/Home/Index")); 
             //filters.Add(new GlobalAntiForgeryTokenAttribute());
         }
     }
