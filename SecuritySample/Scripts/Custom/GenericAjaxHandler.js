@@ -66,11 +66,14 @@ stopProgress = function () {
 
 onErrorHandler = function (req, status, error) {
     //debugger;
-    if (req.status === 401) {
+    if (req != null && (req.status === 401 || req.status === 403)) {
         window.location.href = baseUrl + 'Home/Index';
     }
-    if (req != null && req.status != 401) {
+    else if (req != null) {
         alert("Error occured on ajax call : " + req.status + " : " + req.statusText);
+    }
+    else {
+        alert("Error occured on ajax call : req object is null");
     }
     stopProgress();
 }
