@@ -55,6 +55,7 @@
     //========================== document ready method
     $(document).ready(function () {
         onclickEventLoadForLogon();
+        onClickEventContact();
     });
 
     function FillLogonObject() {
@@ -67,13 +68,19 @@
     }
     onclickEventLoadForLogon = function () {
         $("#btnlogon").click(function (e) {
-
             var logonModel = FillLogonObject(); debugger;
             if (true) {
                 var linkUrl = baseUrl + 'Home/CSRFLogin';
                 JQAjax('POST', linkUrl, logonModel, "account", flag, "");
             }
 
+        });
+    }
+    onClickEventContact = function () {        
+        $("#lnkContact").click(function () {
+            var logonModel = FillLogonObject();
+            linkUrl = baseUrl + 'Home/Contact';
+            JQAjax('POST', linkUrl, logonModel, "contact", flag, "");
         });
     }
 

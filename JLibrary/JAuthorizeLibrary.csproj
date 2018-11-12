@@ -72,6 +72,7 @@
     <Compile Include="JAntiForgeryTokenAttribute.cs" />
     <Compile Include="JActionAuthorizeAttribute.cs" />
     <Compile Include="JErrorHandlerAttribute.cs" />
+    <Compile Include="JLogonAuthorizeAtrribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

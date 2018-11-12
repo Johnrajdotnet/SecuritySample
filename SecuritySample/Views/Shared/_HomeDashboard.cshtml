@@ -1,0 +1,25 @@
+﻿
+<h2>Welcome Partial HomePage</h2>
+
+<script type="text/javascript">
+    baseUrl = '@Url.Content("~/")';
+    flag = "home";
+    //========================== document ready method
+    $(document).ready(function () {
+
+        //onClickEventContact();
+    });
+
+    function FillLogonObject() {
+        inputlogon = { UserName: "fsf", Password: "fasfsa" };
+        return inputlogon;
+    }
+    onClickEventContact = function () {
+        $("#lnkContact").click(function () {
+            var logonModel = FillLogonObject();
+            linkUrl = baseUrl + 'Home/Contact';
+            JQAjax('POST', linkUrl, logonModel, "contact", flag, "");
+        });
+    }
+
+</script>

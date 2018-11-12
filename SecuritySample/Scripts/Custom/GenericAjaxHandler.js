@@ -5,6 +5,7 @@
 
 JQAjax = function (httpType, linkUrl, postdata, onSucessFlag, dataflag, redirectToUrl) {
     // startProgress();
+   
     var headers1 = { '__RequestVerificationToken': $("input[name='__RequestVerificationToken']").val() };
     $.ajax({
         type: httpType,
@@ -27,6 +28,7 @@ JQAjax = function (httpType, linkUrl, postdata, onSucessFlag, dataflag, redirect
 //=====================
 JQAjaxStringifyInput = function (httpType, linkUrl, postdata, onSucessFlag, dataflag, redirectToUrl) {
     //startProgress();
+   
     $.ajax({
         type: httpType,
         url: linkUrl,
@@ -45,9 +47,11 @@ JQAjaxStringifyInput = function (httpType, linkUrl, postdata, onSucessFlag, data
 }
 
 onSucessEvent = function (data, onSucessFlag, dataflag, redirectToUrl) {
-    //alert(data);
+    //alert(data); 
+    debugger;
     switch (onSucessFlag) {
         case 'account': $(".container.body-content").html(data); break;
+        case 'contact': $(".container.body-content").html(data); break;
     }
 }
 
@@ -61,7 +65,7 @@ stopProgress = function () {
 }
 
 onErrorHandler = function (req, status, error) {
-    debugger;
+    //debugger;
     if (req.status === 401) {
         window.location.href = baseUrl + 'Home/Index';
     }

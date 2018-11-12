@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 
-namespace SecuritySample.Attribute
+namespace JAuthorizeLibrary.Attribute
 {
     /// <summary>
     /// GenerateAntiforgeryTokenCookieForAjaxAttribute

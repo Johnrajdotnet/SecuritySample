@@ -2,27 +2,25 @@
 using System.Web;
 using System.Web.Mvc;
 
-namespace JCustom.Attribute
+namespace JAuthorizeLibrary.Attribute
 {
     public class JActionAuthorizeAttribute : AuthorizeAttribute
     {
         private bool isAuthorized = false;
-        private bool isUserValid = false;
-        private string loginUrl = string.Empty;
-        protected JActionAuthorizeAttribute(bool _isUserValid, string _redirectUrl)
+        private string reDirectUrl = "~/Home/Index";
+        public JActionAuthorizeAttribute(string _reDirectUrl)
         {
-            isUserValid = _isUserValid;
-            loginUrl = _redirectUrl;
+            reDirectUrl = _reDirectUrl;
         }
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
             var routeDataSet = httpContext.Request.RequestContext.RouteData;
-            if (routeDataSet != null && isUserValid)
+            if (routeDataSet != null)
             {
 
                 string controller = routeDataSet.Values["controller"] != null ? routeDataSet.Values["controller"].ToString() : string.Empty;
                 string action = routeDataSet.Values["action"] != null ? routeDataSet.Values["action"].ToString() : string.Empty;
-                isAuthorized= IsAuthorized(controller, action);
+                isAuthorized = IsAuthorized(controller, action);
 
             }
 
@@ -46,13 +44,14 @@ namespace JCustom.Attribute
                 else
                 {
                     // check if a new session id was generated 
-                    filterContext.Result = new RedirectResult("~/Home/Index");
+                    filterContext.Result = new RedirectResult(reDirectUrl);
                 }
             }
             base.HandleUnauthorizedRequest(filterContext);
         }
 
-        protected virtual bool IsAuthorized(string controller, string action) {
+        protected virtual bool IsAuthorized(string controller, string action)
+        {
             return IsUserAuthorizedHome(action);
         }
         protected virtual bool IsUserAuthorizedHome(string action)
@@ -61,5 +60,4 @@ namespace JCustom.Attribute
         }
 
     }
-
 }

@@ -138,10 +138,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infra\Authenticate.cs" />
+    <Compile Include="Infra\AllowAnonymousAttribute.cs" />
     <Compile Include="Infra\CustomActionRequest.cs" />
     <Compile Include="Infra\Cryptography.cs" />
     <Compile Include="Infra\CustomHelpers.cs" />
     <Compile Include="Infra\NoAntiForgeryCheckAttribute.cs" />
+    <Compile Include="Infra\RTMSPrincipal.cs" />
     <Compile Include="Models\LoginDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -156,6 +159,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Custom\GenericAjaxHandler.js" />
+    <Content Include="Scripts\Custom\Home.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -182,6 +186,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\LoginCRSFPage.cshtml" />
+    <Content Include="Views\Shared\_HomeDashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

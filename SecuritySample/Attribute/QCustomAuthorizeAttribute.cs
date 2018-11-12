@@ -1,15 +1,17 @@
-﻿using JCustom.Attribute;
+﻿using JAuthorizeLibrary.Attribute;
 
 namespace SecuritySample.Attribute
 {
     public class QActionAuthorizeAttribute : JActionAuthorizeAttribute
     {
-       
-        public QActionAuthorizeAttribute(bool isUser,string reDirectUrl):base(isUser, reDirectUrl)
+        public QActionAuthorizeAttribute():base("~/Home/Index")
         {
-            isUser = false;
+                   
         }
+        private static bool IsValidUser() {
 
+            return true;
+        }
         protected override bool IsAuthorized(string controller, string action)
         {
             bool isAuthorized = false;
@@ -33,6 +35,8 @@ namespace SecuritySample.Attribute
                 case "CSRFLogin":
                     { isAccessAction = true; break; }
                 case "About":
+                    { isAccessAction = true; break; }
+                case "Contact":
                     { isAccessAction = true; break; }
 
             }

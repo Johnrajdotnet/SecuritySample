@@ -15,3 +15,4 @@ D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\System.Web.WebPa
 D:\John\Personal\FairExcerise\SecuritySample\JLibrary\bin\Debug\System.Web.WebPages.Razor.xml
 D:\John\Personal\FairExcerise\SecuritySample\JLibrary\obj\Debug\JLibrary.dll
 D:\John\Personal\FairExcerise\SecuritySample\JLibrary\obj\Debug\JLibrary.pdb
+D:\John\Personal\FairExcerise\SecuritySample\JLibrary\obj\Debug\JAuthorizeLibrary.csprojResolveAssemblyReference.cache

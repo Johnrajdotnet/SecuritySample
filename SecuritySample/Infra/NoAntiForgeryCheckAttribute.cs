@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebApplication2.Infra
 {
-    public class NoAntiForgeryCheckAttribute : Attribute
+    public sealed class NoAntiForgeryAttribute : Attribute
     {
     }
 }
