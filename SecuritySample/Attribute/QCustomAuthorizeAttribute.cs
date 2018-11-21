@@ -24,7 +24,7 @@ namespace SecuritySample.Attribute
             return isAuthorized;
         }
 
-        protected override bool IsUserAuthorizedHome(string action)
+        private bool IsUserAuthorizedHome(string action)
         {
             bool isAccessAction = false;
             switch (action)

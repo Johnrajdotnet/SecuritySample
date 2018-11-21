@@ -52,10 +52,6 @@ namespace JAuthorizeLibrary.Attribute
 
         protected virtual bool IsAuthorized(string controller, string action)
         {
-            return IsUserAuthorizedHome(action);
-        }
-        protected virtual bool IsUserAuthorizedHome(string action)
-        {
             return false;
         }
 
