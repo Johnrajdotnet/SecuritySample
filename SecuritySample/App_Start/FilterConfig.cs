@@ -11,7 +11,7 @@ namespace SecuritySample
             filters.Add(new JErrorHandlerAttribute());
             filters.Add(new JLogonAuthorizeAtrribute());
             filters.Add(new QActionAuthorizeAttribute());
-            // filters.Add(new JAntiforgeryTokenAttribute());
+            filters.Add(new JAntiforgeryTokenAttribute());
 
         }
     }

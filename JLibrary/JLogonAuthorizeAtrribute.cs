@@ -17,8 +17,20 @@ namespace JAuthorizeLibrary.Attribute
             // If the method did not exclusively opt-out of security (via the AllowAnonmousAttribute), then check for an authentication ticket.
             if (!skipAuthorization)
             {
-                // CheckAuthorize(filterContext);
                 base.OnAuthorization(filterContext);
+                OnUnauthorizedResult(filterContext);
+            }
+        }
+
+        private void OnUnauthorizedResult(AuthorizationContext filterContext)
+        {
+            if (filterContext.Result is HttpUnauthorizedResult)
+            {
+                if (filterContext.HttpContext.Request.IsAjaxRequest())
+                {
+                    filterContext.HttpContext.Response.StatusCode = 401;
+                    filterContext.HttpContext.Response.End();
+                }
             }
         }
     }
