@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.Mvc;
 
-namespace JAuthorizeLibrary.Attribute
+namespace JLibrary.Attribute
 {
     public class JActionAuthorizeAttribute : AuthorizeAttribute
     {
@@ -37,7 +37,7 @@ namespace JAuthorizeLibrary.Attribute
                 if (filterContext.HttpContext.Request.IsAjaxRequest())
                 {
                     filterContext.HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
-                    filterContext.HttpContext.Response.StatusDescription = "Humans and robots must authenticate";
+                    filterContext.HttpContext.Response.StatusDescription = "Unauthorized";
                     filterContext.HttpContext.Response.SuppressFormsAuthenticationRedirect = true;
                     filterContext.HttpContext.Response.End();
                 }

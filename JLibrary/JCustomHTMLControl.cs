@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using JLibrary.Attribute;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace JLibrary
+namespace JLibrary.Control
 {
-   public static class JCustomHTMLControl
+    public static class JCustomHTMLControl
     {
         public static MvcHtmlString EncodedActionLink(this HtmlHelper htmlHelper, string linkText, string actionName, string controllerName, object routeValues, object htmlAttributes)
         {

@@ -1,4 +1,5 @@
 ﻿using JAuthorizeLibrary.Attribute;
+using JLibrary.Attribute;
 
 namespace SecuritySample.Attribute
 {

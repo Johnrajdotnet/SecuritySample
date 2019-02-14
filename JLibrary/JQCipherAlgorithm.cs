@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace JLibrary
+namespace JLibrary.Attribute
 {
-   public class JQCipherAlgorithm
+    public class JQCipherAlgorithm
     {
         public static string Encrypt(string clearText,string key)
         {

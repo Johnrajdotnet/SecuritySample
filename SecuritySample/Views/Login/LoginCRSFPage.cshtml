@@ -44,7 +44,7 @@
                 </div>
                 @Html.CustomAntiForgeryToken()
             </fieldset>
-
+@*@Html.EncodedActionLink(item.TVNumber.ToString(), "InitializeWizardTVActivity", "WBodyWFlow", new { tvNumber = item.TVNumber, programMenuId = (int)ApplicationRTMS.ProgramMenuName.TV, programTaskId = (int)ApplicationRTMS.ProgramTaskName.Headsup }, null)*@
         }
     </div>
 </div>

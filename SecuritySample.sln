@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecuritySample", "SecurityS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JAuthorizeLibrary", "JLibrary\JAuthorizeLibrary.csproj", "{930D8082-BC94-48C4-8192-B6177A3E6EC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{46CA060D-D4BC-44D1-8EA5-684BE9AECCBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{930D8082-BC94-48C4-8192-B6177A3E6EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{930D8082-BC94-48C4-8192-B6177A3E6EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{930D8082-BC94-48C4-8192-B6177A3E6EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46CA060D-D4BC-44D1-8EA5-684BE9AECCBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46CA060D-D4BC-44D1-8EA5-684BE9AECCBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46CA060D-D4BC-44D1-8EA5-684BE9AECCBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46CA060D-D4BC-44D1-8EA5-684BE9AECCBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

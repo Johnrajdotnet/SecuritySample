@@ -1,4 +1,5 @@
 ﻿using JAuthorizeLibrary.Attribute;
+using JLibrary.Attribute;
 using SecuritySample.Attribute;
 using System.Web.Mvc;
 
@@ -12,7 +13,7 @@ namespace SecuritySample
             filters.Add(new JLogonAuthorizeAtrribute());
             filters.Add(new QActionAuthorizeAttribute());
             filters.Add(new JAntiforgeryTokenAttribute());
-
+            filters.Add(new JEncrptActionParameterAttribute());
         }
     }
 }

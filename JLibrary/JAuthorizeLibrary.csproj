@@ -70,17 +70,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EncrptActionParameterAttribute.cs" />
+    <Compile Include="JEncrptActionParameterAttribute.cs" />
     <Compile Include="JCustomHTMLControl.cs" />
     <Compile Include="JQCipherAlgorithm.cs" />
     <Compile Include="JAntiForgeryTokenAttribute.cs" />
     <Compile Include="JActionAuthorizeAttribute.cs" />
-    <Compile Include="JErrorHandlerAttribute.cs" />
     <Compile Include="JLogonAuthorizeAtrribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
